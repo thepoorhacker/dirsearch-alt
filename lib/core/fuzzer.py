@@ -219,7 +219,7 @@ class Fuzzer:
             options["exclude_redirect"]
             and (
                 options["exclude_redirect"] in resp.redirect
-                or re.search(options["exclude_redirect"], resp.redirect)
+                or re.match(options["exclude_redirect"], resp.redirect)
             )
         ):
             return True
